@@ -8,7 +8,11 @@
 
 #import "STViewController.h"
 
-@interface STViewController ()
+@interface STViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *stackTableView;
+
+@property (strong, nonatomic) NSMutableArray *stackArray;
 
 @end
 
@@ -17,13 +21,45 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    self.stackArray = [NSMutableArray array];
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - UITableViewDataSource Methods
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return self.stackArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell;
+    static NSString *identifier = @"InformationTableViewCellIdentifier";
+    
+    cell = [self.stackTableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate Methods
+
+#pragma mark - Action Methods
+- (IBAction)pushWasPressed:(id)sender
+{
+    
+}
+
+- (IBAction)popWasPressed:(id)sender
+{
+    
+}
+
+- (IBAction)topWasPressed:(id)sender
+{
+    
 }
 
 @end
