@@ -7,12 +7,14 @@
 //
 
 #import "STViewController.h"
+#import <QuartzCore/QuartzCore.h>
+#import "STStack.h"
 
 @interface STViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *stackTableView;
 
-@property (strong, nonatomic) NSMutableArray *stackArray;
+@property (strong, nonatomic) STStack *stack;
 
 @end
 
@@ -21,13 +23,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.stackArray = [NSMutableArray array];
+	self.stack = [[STStack alloc] init];
 }
 
 #pragma mark - UITableViewDataSource Methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.stackArray.count;
+    return self.stack.stackArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

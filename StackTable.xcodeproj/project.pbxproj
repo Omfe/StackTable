@@ -18,6 +18,7 @@
 		993D9B3D1633B93600A7736D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 993D9B3C1633B93600A7736D /* Default@2x.png */; };
 		993D9B3F1633B93600A7736D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 993D9B3E1633B93600A7736D /* Default-568h@2x.png */; };
 		993D9B421633B93600A7736D /* STViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 993D9B411633B93600A7736D /* STViewController.m */; };
+		993D9B751634803200A7736D /* STStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 993D9B741634803200A7736D /* STStack.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		993D9B3E1633B93600A7736D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		993D9B401633B93600A7736D /* STViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STViewController.h; sourceTree = "<group>"; };
 		993D9B411633B93600A7736D /* STViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STViewController.m; sourceTree = "<group>"; };
+		993D9B731634803200A7736D /* STStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STStack.h; sourceTree = "<group>"; };
+		993D9B741634803200A7736D /* STStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STStack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				993D9B401633B93600A7736D /* STViewController.h */,
 				993D9B411633B93600A7736D /* STViewController.m */,
 				428A61DE1633C347001155D6 /* STViewController.xib */,
+				993D9B731634803200A7736D /* STStack.h */,
+				993D9B741634803200A7736D /* STStack.m */,
 				993D9B2F1633B93600A7736D /* Supporting Files */,
 			);
 			path = StackTable;
@@ -177,6 +182,7 @@
 				993D9B351633B93600A7736D /* main.m in Sources */,
 				993D9B391633B93600A7736D /* STAppDelegate.m in Sources */,
 				993D9B421633B93600A7736D /* STViewController.m in Sources */,
+				993D9B751634803200A7736D /* STStack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
