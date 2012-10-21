@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		428A61E01633C347001155D6 /* STViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 428A61DE1633C347001155D6 /* STViewController.xib */; };
 		993D9B291633B93600A7736D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993D9B281633B93600A7736D /* UIKit.framework */; };
 		993D9B2B1633B93600A7736D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993D9B2A1633B93600A7736D /* Foundation.framework */; };
 		993D9B2D1633B93600A7736D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993D9B2C1633B93600A7736D /* CoreGraphics.framework */; };
@@ -17,10 +18,10 @@
 		993D9B3D1633B93600A7736D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 993D9B3C1633B93600A7736D /* Default@2x.png */; };
 		993D9B3F1633B93600A7736D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 993D9B3E1633B93600A7736D /* Default-568h@2x.png */; };
 		993D9B421633B93600A7736D /* STViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 993D9B411633B93600A7736D /* STViewController.m */; };
-		993D9B451633B93600A7736D /* STViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 993D9B431633B93600A7736D /* STViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		428A61DF1633C347001155D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/STViewController.xib; sourceTree = "<group>"; };
 		993D9B241633B93600A7736D /* StackTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		993D9B281633B93600A7736D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		993D9B2A1633B93600A7736D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -36,7 +37,6 @@
 		993D9B3E1633B93600A7736D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		993D9B401633B93600A7736D /* STViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STViewController.h; sourceTree = "<group>"; };
 		993D9B411633B93600A7736D /* STViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STViewController.m; sourceTree = "<group>"; };
-		993D9B441633B93600A7736D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/STViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 				993D9B381633B93600A7736D /* STAppDelegate.m */,
 				993D9B401633B93600A7736D /* STViewController.h */,
 				993D9B411633B93600A7736D /* STViewController.m */,
-				993D9B431633B93600A7736D /* STViewController.xib */,
+				428A61DE1633C347001155D6 /* STViewController.xib */,
 				993D9B2F1633B93600A7736D /* Supporting Files */,
 			);
 			path = StackTable;
@@ -163,7 +163,7 @@
 				993D9B3B1633B93600A7736D /* Default.png in Resources */,
 				993D9B3D1633B93600A7736D /* Default@2x.png in Resources */,
 				993D9B3F1633B93600A7736D /* Default-568h@2x.png in Resources */,
-				993D9B451633B93600A7736D /* STViewController.xib in Resources */,
+				428A61E01633C347001155D6 /* STViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,20 +183,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		428A61DE1633C347001155D6 /* STViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				428A61DF1633C347001155D6 /* en */,
+			);
+			name = STViewController.xib;
+			sourceTree = "<group>";
+		};
 		993D9B311633B93600A7736D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				993D9B321633B93600A7736D /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		993D9B431633B93600A7736D /* STViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				993D9B441633B93600A7736D /* en */,
-			);
-			name = STViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -261,6 +261,7 @@
 				GCC_PREFIX_HEADER = "StackTable/StackTable-Prefix.pch";
 				INFOPLIST_FILE = "StackTable/StackTable-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -272,6 +273,7 @@
 				GCC_PREFIX_HEADER = "StackTable/StackTable-Prefix.pch";
 				INFOPLIST_FILE = "StackTable/StackTable-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -295,6 +297,7 @@
 				993D9B4A1633B93600A7736D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
