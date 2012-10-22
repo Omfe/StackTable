@@ -19,14 +19,23 @@
     return self;
 }
 
--(void)pushAnObject
+#pragma mark - Public Methods
+- (void)pushAnObject
 {
+    NSString *object;
     
+    object = [[NSString alloc]initWithFormat:@"%i", self.stackArray.count]; //Inicializar String
+    [self pushObject:object];
 }
 
--(void)popAnObject
+- (void)popAnObject
 {
-    
+    [self.stackArray removeLastObject];
+}
+
+- (void)pushObject:(NSString *)object //poner
+{
+    [self.stackArray addObject:object];
 }
 
 @end

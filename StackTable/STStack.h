@@ -12,8 +12,8 @@
 
 @property (strong, nonatomic) NSMutableArray *stackArray;
 
-- (void) pushAnObject;
-- (void) popAnObject;
-//- (NSString *) top;
+- (void)pushAnObject;
+- (void)popAnObject;
+- (void)pushObject:(NSString *)object;
 
 @end

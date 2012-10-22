@@ -7,7 +7,6 @@
 //
 
 #import "STViewController.h"
-#import <QuartzCore/QuartzCore.h>
 #import "STStack.h"
 
 @interface STViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -34,6 +33,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSString *object;
     UITableViewCell *cell;
     static NSString *identifier = @"InformationTableViewCellIdentifier";
     
@@ -43,6 +43,9 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
+    object = [self.stack.stackArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = object;
+    
     return cell;
 }
 
@@ -51,17 +54,31 @@
 #pragma mark - Action Methods
 - (IBAction)pushWasPressed:(id)sender
 {
+    NSArray *indexPaths;
+    NSIndexPath *indexPath;
     
+    indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    indexPaths = [NSArray arrayWithObject:indexPath];
+    
+    [self.stack pushAnObject];
+    [self.stackTableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationLeft];
 }
 
 - (IBAction)popWasPressed:(id)sender
 {
+    NSArray *indexPaths;
+    NSIndexPath *indexPath;
     
+    indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    indexPaths = [NSArray arrayWithObject:indexPath];
+
+    [self.stack popAnObject];
+    [self.stackTableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationRight];
 }
 
 - (IBAction)topWasPressed:(id)sender
 {
-    
+    //highlight the top cell
 }
 
 @end
