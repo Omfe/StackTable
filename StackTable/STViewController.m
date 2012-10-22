@@ -62,6 +62,7 @@
     
     [self.stack pushAnObject];
     [self.stackTableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationLeft];
+    [self.stackTableView reloadData];
 }
 
 - (IBAction)popWasPressed:(id)sender
@@ -69,11 +70,16 @@
     NSArray *indexPaths;
     NSIndexPath *indexPath;
     
+    if (self.stack.stackArray.count == 0) {
+        return;
+    }
+    
     indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     indexPaths = [NSArray arrayWithObject:indexPath];
 
     [self.stack popAnObject];
     [self.stackTableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationRight];
+    [self.stackTableView reloadData];
 }
 
 - (IBAction)topWasPressed:(id)sender
