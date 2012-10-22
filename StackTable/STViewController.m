@@ -40,7 +40,6 @@
     cell = [self.stackTableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     object = [self.stack.reversedStackArray objectAtIndex:indexPath.row];
@@ -50,6 +49,10 @@
 }
 
 #pragma mark - UITableViewDelegate Methods
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 #pragma mark - Action Methods
 - (IBAction)pushWasPressed:(id)sender
@@ -82,7 +85,16 @@
 
 - (IBAction)topWasPressed:(id)sender
 {
-    //highlight the top cell
+    NSIndexPath *indexPath;
+    
+    if (self.stack.stackArray.count == 0) {
+        return;
+    }
+    
+    indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    
+    [self.stackTableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionTop];
+    [self.stackTableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end
