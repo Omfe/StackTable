@@ -11,6 +11,7 @@
 @interface STStack : NSObject
 
 @property (strong, nonatomic) NSMutableArray *stackArray;
+@property (readonly, nonatomic) NSArray *reversedStackArray;
 
 - (void)pushAnObject;
 - (void)popAnObject;

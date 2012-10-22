@@ -15,6 +15,7 @@
     self = [super init];
     if (self) {
         self.stackArray = [NSMutableArray array];
+        _reversedStackArray = [NSArray array];
     }
     return self;
 }
@@ -31,11 +32,13 @@
 - (void)popAnObject
 {
     [self.stackArray removeLastObject];
+    _reversedStackArray = [[self.stackArray reverseObjectEnumerator] allObjects];
 }
 
 - (void)pushObject:(NSString *)object //poner
 {
     [self.stackArray addObject:object];
+    _reversedStackArray = [[self.stackArray reverseObjectEnumerator] allObjects];
 }
 
 @end

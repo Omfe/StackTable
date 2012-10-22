@@ -28,7 +28,7 @@
 #pragma mark - UITableViewDataSource Methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.stack.stackArray.count;
+    return self.stack.reversedStackArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -43,7 +43,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    object = [self.stack.stackArray objectAtIndex:indexPath.row];
+    object = [self.stack.reversedStackArray objectAtIndex:indexPath.row];
     cell.textLabel.text = object;
     
     return cell;
@@ -62,7 +62,6 @@
     
     [self.stack pushAnObject];
     [self.stackTableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationLeft];
-    [self.stackTableView reloadData];
 }
 
 - (IBAction)popWasPressed:(id)sender
@@ -79,7 +78,6 @@
 
     [self.stack popAnObject];
     [self.stackTableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationRight];
-    [self.stackTableView reloadData];
 }
 
 - (IBAction)topWasPressed:(id)sender
